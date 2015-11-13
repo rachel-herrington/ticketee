@@ -20,6 +20,7 @@ RSpec.feature "Users can create new projects" do
     title = "Sublime Text 3 - Projects - Ticketee"
     expect(page).to have_title title
   end
+  
   scenario "when providing invalid attributes" do
     click_button "Create Project"
 
