@@ -5,6 +5,7 @@ class TicketsController < ApplicationController
   def new
     @ticket = @project.tickets.build
     authorize @ticket, :create?
+    3.times { @ticket.attachments.build }
   end
 
   def create
@@ -31,7 +32,7 @@ class TicketsController < ApplicationController
 
   def update
     authorize @ticket, :update?
-    
+
     if @ticket.update(ticket_params)
         flash[:notice]  = "Ticket has been updated."
         redirect_to [@project, @ticket]
@@ -43,7 +44,7 @@ class TicketsController < ApplicationController
 
   def destroy
     authorize @ticket, :destroy?
-    
+
     @ticket.destroy
     flash[:notice] = "Ticket has been deleted."
 
@@ -53,7 +54,7 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:name, :description, :attachment, :attachment_cache)
+    params.require(:ticket).permit(:name, :description, attachments_attributes: [:file, :file_cache])
   end
 
   def set_project
