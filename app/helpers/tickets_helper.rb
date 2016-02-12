@@ -4,7 +4,7 @@ module TicketsHelper
 			content_tag(:p) do
 				value = "<strong><i class='fa fa-gear'></i> state changed</strong>"
 				if comment.previous_state.present?
-					value += "from #{render comment.previous_state}"
+					value += " from #{render comment.previous_state}"
 				end
 				value+= " to #{render comment.state}"
 				value.html_safe
