@@ -15,6 +15,7 @@ RSpec.describe TicketPolicy do
       it { should_not permit_action :create }
       it { should_not permit_action :update }
       it { should_not permit_action :destroy }
+      it { should_not permit_action :change_state }
     end
 
     context "for viewers of the project" do
@@ -23,6 +24,7 @@ RSpec.describe TicketPolicy do
       it { should_not permit_action :create }
       it { should_not permit_action :update}
       it { should_not permit_action :destroy }
+      it { should_not permit_action :change_state }
     end
 
     context "for editors of the project" do
@@ -31,7 +33,8 @@ RSpec.describe TicketPolicy do
       it { should permit_action :create }
       it { should_not permit_action :update }
       it { should_not permit_action :destroy }
-      
+      it { should_not permit_action :change_state }
+
       context "when the editor created the ticket" do
         before { ticket.author = user }
         
@@ -45,6 +48,7 @@ RSpec.describe TicketPolicy do
       it { should permit_action :create }
       it { should permit_action :update }
       it { should permit_action :destroy }
+      it { should permit_action :change_state }
     end
 
     context "for managers of other projects" do
@@ -56,6 +60,7 @@ RSpec.describe TicketPolicy do
       it { should_not permit_action :create }
       it { should_not permit_action :update }
       it { should_not permit_action :destroy }
+      it { should_not permit_action :change_state }
     end
 
     context "for administrators" do
@@ -64,6 +69,7 @@ RSpec.describe TicketPolicy do
       it { should permit_action :create }
       it { should permit_action :update }
       it { should permit_action :destroy }
+      it { should permit_action :change_state }
     end
   end
 end
