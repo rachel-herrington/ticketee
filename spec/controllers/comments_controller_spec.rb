@@ -5,7 +5,7 @@ RSpec.describe CommentsController, type: :controller do
 	let(:project) { Project.create!(name: "Ticketee") }
 	let(:state) { State.create!(name: "Hacked") }
 	let(:ticket) do
-		project.tickets.create(name: "State trasnsitions",
+		project.tickets.create(name: "State transitions",
 			description: "Can't be hacked.", author: user)
 	end
 
