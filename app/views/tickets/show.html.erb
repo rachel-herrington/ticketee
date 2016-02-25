@@ -5,6 +5,7 @@
 
   <header>
     <h2><%= @ticket.name %></h2>
+    <%= simple_format(@ticket.description) %>
 
     <table id="attributes">
       <tr>
@@ -43,8 +44,6 @@
       <% end %>
     </ul>
   </header>
-
-  <%= simple_format(@ticket.description) %>
 
   <% if @ticket.attachments.any? %>
     <h4>Attachments</h4>
