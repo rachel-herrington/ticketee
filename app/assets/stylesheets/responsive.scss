@@ -6,12 +6,12 @@
     }
   }
 
-ul.actions {
-  position: absolute;
-  bottom: -2px;
-  right: 2px;
-  max-width: 45%;
-  text-align: right;
+  ul.actions {
+    position: absolute;
+    bottom: -2px;
+    right: 2px;
+    max-width: 45%;
+    text-align: right;
   }
 }
 
@@ -23,7 +23,7 @@ ul.actions {
   }
 }
 
-@media(max- width: $screen-sm-max) {
+@media(max-width: $screen-sm-max) {
   ul.actions .form-inline {
   padding-bottom: 5px;
   }
