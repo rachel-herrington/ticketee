@@ -38,6 +38,8 @@ gem "searcher", github: "radar/searcher"
 
 gem "fog", "~> 1.29.0"
 
+gem "rails_12factor", group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
