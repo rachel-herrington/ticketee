@@ -36,7 +36,7 @@ gem "carrierwave", "~> 0.10.0"
 
 gem "searcher", github: "radar/searcher"
 
-gem "fog", "~> 1.29.0"
+gem "fog", "~> 1.36.0"
 
 gem "rails_12factor", group: :production
 
@@ -56,7 +56,6 @@ group :development, :test do
   gem 'byebug'
 
   gem "rspec-rails", "~> 3.2.1"
-
 end
 
 group :development do
@@ -65,7 +64,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
 end
 
 group :test do
