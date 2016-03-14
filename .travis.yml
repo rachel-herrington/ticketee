@@ -1,6 +1,13 @@
 language: ruby
 rvm: 2.2.1
 script: bundle exec rspec
-before_install
-	- export DISPLAY=:99.0
-	- sh -e /etc/init.d/xvfb start
+before_install:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+deploy:
+  provider: heroku
+  api_key:
+    secure: FehMwgujL+wdrbFqwnHaqR0jW9eYiutKGHkKAHHzwBIlmGzPSguvtw5U3lVUoLtLNRtR0z2H+pLLNig/fiMCQXRNgYwTHxX/0l1ec5S4t6Czk7wkxvIjlbjM2ii6aZRtwaUZSWSypm95ma9Bj+TRuxHdqskASu0fN+Q4qSciuduAk72kj+TKNANUt/03e57A2wLuwN084wryAfIHa0/Kx8FqD1VSK/ATDBGLFKF6IlzlAs+GuvRNCb68imKnGPLa8kPFRKSY+1XCL5HFpHb1AFbf8XzwP1dwEkOtpoZFFAXAu4yqecNoZjtqGICReNjNxL92seVFPHUr7fWJPqWiRslK9YgC741Dd71x3xIXbHSBHf962wx/hBhxvp785E7V8kMQjNaODHQL/7ZkqydrVoHGNarXhwbF5MbVsK6WYe6rhUY7VD0TvX7svSyjm+hXFZG45X8LiM8xfSdcBOjr42t1FSOw544Obs5hCT0LJZ00flkkB+LLgZUkNmj+HVOEBC1dW4DXfQTVJI4FWa9E4Q2oS39vRaM5L76HwIvTDwlwOkEZBVdUtTX8jshLHnU9WAcz4piDq4zA73TUWrN1Qk6T1wJJytNm7h3SxPHKOekA6X2GR/HHDu5Lws4fIQRu68tifRDa/PlmqMS36ypPs8W023YE1CMVwEnCLC/JNvQ=
+  app: still-reef-61780
+  on:
+    repo: rachel-herrington/ticketee
